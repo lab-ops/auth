@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/lab-ops/auth/compare/v1.0.3...v1.0.4) (2023-01-21)
+
+
+### Bug Fixes
+
+* Fix github token issues on triggering workflows ([934b052](https://github.com/lab-ops/auth/commit/934b0527943dcf73425a58ac2c821c59e84c40a8))
+
 ## [1.0.3](https://github.com/lab-ops/auth/compare/v1.0.2...v1.0.3) (2023-01-21)
 
 
