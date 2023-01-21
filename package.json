@@ -5,9 +5,10 @@
   "private": "true",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "ts-node-dev",
+    "dev": "ts-node-dev --clear --respawn -r dotenv/config ./src/index.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\"",
+    "start": "node -r dotenv/config dist/index.js",
     "lint": "eslint --fix ./src/**/*.ts",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
     "prepare": "husky install"
@@ -22,7 +23,7 @@
     "@typescript-eslint/parser": "^5.48.2",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "node-notifier": "*",
     "prettier": "^2.8.3",
@@ -39,5 +40,14 @@
     "@swc/core": ">=1.2.50",
     "@swc/wasm": ">=1.2.50",
     "node-notifier": "*"
+  },
+  "dependencies": {
+    "@fastify/cors": "^8.2.0",
+    "@fastify/formbody": "^7.4.0",
+    "@fastify/sensible": "^5.2.0",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.11.0",
+    "fastify-plugin": "^4.5.0",
+    "supertokens-node": "^12.1.5"
   }
 }
