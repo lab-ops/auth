@@ -1,7 +1,7 @@
 {
   "name": "auth",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "Lab Ops Authentication Service",
   "private": "true",
   "main": "dist/index.js",
   "scripts": {
