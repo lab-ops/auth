@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/lab-ops/auth/compare/v1.0.2...v1.0.3) (2023-01-21)
+
+
+### Bug Fixes
+
+* move docker publish to seperate workflow ([39fe3e2](https://github.com/lab-ops/auth/commit/39fe3e21aae6c3f246173ffc22dc697da7ffcbe8))
+
 ## [1.0.2](https://github.com/lab-ops/auth/compare/v1.0.1...v1.0.2) (2023-01-21)
 
 
