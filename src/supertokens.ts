@@ -45,7 +45,30 @@ supertokens.init({
         }),
       ],
     }),
-    Session.init(),
+    Session.init({
+      jwt: {
+        enable: true,
+      },
+      override: {
+        functions: function (originalImplementation) {
+          return {
+            ...originalImplementation,
+            createNewSession: async function (input) {
+              input.accessTokenPayload = {
+                ...input.accessTokenPayload,
+                'https://hasura.io/jwt/claims': {
+                  'x-hasura-user-id': input.userId,
+                  'x-hasura-default-role': 'user',
+                  'x-hasura-allowed-roles': ['user'],
+                },
+              }
+
+              return originalImplementation.createNewSession(input)
+            },
+          }
+        },
+      },
+    }),
     jwt.init(),
     UserRoles.init(),
     Dashboard.init({

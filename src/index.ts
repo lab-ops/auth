@@ -20,7 +20,10 @@ app.register(noFaviconPlugin)
 app.register(fastifyFormbody)
 
 app.register(fastifyCors, {
-  origin: '*',
+  origin:
+    process.env.ENABLE_CORS_REFLECTION === 'true'
+      ? true
+      : ['https://app.lab-ops.cloud', 'https://api.lab-ops.cloud'],
   allowedHeaders: [
     'Content-Type',
     'Cross-Origin-Resource-Policy',

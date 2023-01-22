@@ -35,4 +35,6 @@ RUN pnpm install --prod --ignore-scripts
 
 COPY --from=builder --chown=node:node /build/dist ./dist
 
+USER node
+
 ENTRYPOINT [ "pnpm", "run", "start" ]
